@@ -1,0 +1,48 @@
+.macro-card {
+    background-color: #9f9f9f;
+    flex: 1;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+ 
+  .circle-placeholder {
+    width: 100px;
+    height: 100px;
+    background-color: #44388d;
+    border-radius: 50%;
+    margin: 1rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  .macro-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 1rem;
+    gap: 1rem;
+  }
+  
+  .macro-footer p {
+    margin: 0;
+    font-size: 12px;
+  }
+  
+  
+  .legend-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .legend-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  

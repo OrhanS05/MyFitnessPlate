@@ -1,0 +1,25 @@
+.stats-card {
+    background-color: #9f9f9f;
+    flex: 1;
+    border-radius: 8px;
+    padding: 1rem;
+    color: #fff;
+    position: relative; 
+  }
+  
+  .stats-card-header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .stats-card-body {
+    text-align: left; 
+    line-height: 1.4;
+  }
+  
+  .stats-card h3 {
+    margin: 0; 
+  }
+  

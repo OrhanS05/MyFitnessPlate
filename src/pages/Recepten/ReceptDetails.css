@@ -1,0 +1,36 @@
+.recipe-details-container {
+    color: #ffffff; 
+    font-family: 'Inter', sans-serif;
+  }
+  
+ 
+  .recipe-details-image {
+    max-width: 300px;
+    margin-bottom: 1rem;
+    border-radius: 8px; 
+  }
+  
+ 
+  .recipe-details-container h1,
+  .recipe-details-container h2 {
+    color: #ffffff;
+    margin-bottom: 1rem;
+  }
+  
+
+  .recipe-summary,
+  .recipe-instructions {
+    margin-bottom: 2rem;
+  }
+  
+  .macro-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 1rem 0;
+  }
+  
+  .macro-list li {
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+  }
+  
