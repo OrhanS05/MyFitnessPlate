@@ -1,0 +1,27 @@
+.meal-tabs {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  
+  .meal-tab {
+    background-color: #fff;
+    color: #2f235a;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  
+  .meal-tab:hover {
+    background-color: #ddd;
+  }
+  
+  .meal-tab.active {
+    background-color: #4285F4;
+    color: #fff;
+  }
+  
