@@ -1,5 +1,19 @@
 .dagboek-container {
+    max-width: 1200px;    
+    margin: 0 auto;       
     padding: 2rem;
     color: #fff;
- }
+  }
+  
+  .dagboek-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    margin-bottom: 1rem;
+  }
+  
+  .dagboek-title {
+    font-size: 1.5rem;
+    margin: 0 0 1rem 0;
+  }
   

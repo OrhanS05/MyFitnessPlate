@@ -13,10 +13,12 @@ function Dagboek() {
   };
 
   return (
-    <div className="dagboek-container">
-      <h2>Mijn Dagboek voor {todayString}</h2>
-      <MealTabs options={mealOptions} activeTab={activeMeal} onTabSelect={handleTabSelect} />
-     </div>
+<div className="dagboek-container">
+  <div className="dagboek-header">
+    <h2 className="dagboek-title">Mijn Dagboek voor {todayString}</h2>
+    <MealTabs options={mealOptions} activeTab={activeMeal} onTabSelect={handleTabSelect} />
+  </div>
+</div>
   );
 }
 
