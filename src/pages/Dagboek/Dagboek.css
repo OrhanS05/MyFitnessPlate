@@ -1,19 +1,36 @@
 .dagboek-container {
-    max-width: 1200px;    
-    margin: 0 auto;       
     padding: 2rem;
     color: #fff;
-  }
-  
-  .dagboek-header {
+}
+ 
+.dagboek-header {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
     align-items: flex-start; 
     margin-bottom: 1rem;
-  }
+}
   
-  .dagboek-title {
+.dagboek-title {
     font-size: 1.5rem;
     margin: 0 0 1rem 0;
-  }
-  
+}
+
+
+.dagboek-items-list {
+    background-color: #ffffff; 
+    padding: 1rem;
+    border-radius: 8px;
+    color: #000; 
+}
+
+.dagboek-item {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #9f9f9f;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dagboek-item:last-child {
+    border-bottom: none;
+}

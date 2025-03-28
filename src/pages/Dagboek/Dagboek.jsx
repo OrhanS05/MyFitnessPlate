@@ -3,6 +3,7 @@ import "./Dagboek.css";
 import getFormattedDate from "../../helpers/dateHelper";
 import MealTabs from "../../components/MealTabs/MealTabs";
 import AddRecipeModal from "../../components/AddRecipeModal/AddRecipeModal";
+import Button from "../../components/Button/Button"; 
 
 function Dagboek() {
   const todayString = getFormattedDate();
@@ -51,16 +52,17 @@ function Dagboek() {
         />
       </div>
 
-      <button onClick={() => setShowModal(true)} className="voeg-toe-button">
-        Voeg toe
-      </button>
+      <Button
+        text="Voeg toe"
+        className="blue"
+        onClick={() => setShowModal(true)}
+      />
 
       <div className="dagboek-items-list">
         {daybookItems[activeMeal].map((item, index) => (
           <div key={index} className="dagboek-item">
             <span>
-              {item.name} - {item.kcal} Kcal | {item.carbs}g carbs |{" "}
-              {item.protein}g eiwitten | {item.fat}g vet
+              {item.name} - {item.kcal} Kcal | {item.carbs}g carbs | {item.protein}g eiwitten | {item.fat}g vet
             </span>
             <button onClick={() => handleRemoveItem(index)}>x</button>
           </div>
