@@ -11,6 +11,7 @@ import Recepten from "./pages/Recepten/Recepten";
 import ReceptDetails from "./pages/Recepten/ReceptenDetails";
 import Register from "./pages/Register/Register";
 import Profile from "./pages/Profile/Profile";
+import Dagboek from "./pages/Dagboek/Dagboek"
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
               <Route path="/recepten/:id" element={<ReceptDetails />} />
               <Route path="/register" element={<Register />} />
               <Route path="/profile" element={<Profile />} />
+              <Route path="dagboek" element={<Dagboek />} />
             </Routes>
           </main>
           <Footer />
