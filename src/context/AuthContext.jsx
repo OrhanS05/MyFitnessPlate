@@ -33,8 +33,7 @@ function AuthContextProvider({ children }) {
     setUserToken(null);
     setUsername("");
     setIsAuth(false);
-    localStorage.removeItem("token");
-    localStorage.removeItem("username");
+    localStorage.clear();
     navigate("/");
   }
 
