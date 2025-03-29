@@ -1,36 +1,92 @@
 .dagboek-container {
     padding: 2rem;
     color: #fff;
-}
- 
-.dagboek-header {
-    display: flex;
-    flex-direction: column; 
-    align-items: flex-start; 
-    margin-bottom: 1rem;
-}
+  }
   
-.dagboek-title {
+  .dagboek-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+  
+  .dagboek-title {
     font-size: 1.5rem;
     margin: 0 0 1rem 0;
-}
-
-
-.dagboek-items-list {
-    background-color: #ffffff; 
+  }
+  
+  .dagboek-items-list {
+    background-color: #ffffff;
     padding: 1rem;
     border-radius: 8px;
-    color: #000; 
-}
-
-.dagboek-item {
+    color: #000;
+  }
+  
+  .dagboek-item {
     padding: 0.5rem 0;
     border-bottom: 1px solid #9f9f9f;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.dagboek-item:last-child {
+  }
+  
+  .dagboek-item:last-child {
     border-bottom: none;
-}
+  }
+
+  .dagboek-item-buttons {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .dagboek-item-buttons button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #2f235a;
+    transition: color 0.3s;
+  }
+  
+  .dagboek-item-buttons button:hover {
+    color: #ff0000;
+  }
+
+  .favorite-section {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    color: #000;
+  }
+  
+  .favorite-items-list .favorite-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #9f9f9f;
+    padding: 0.5rem 0;
+  }
+  
+  .favorite-items-list .favorite-item:last-child {
+    border-bottom: none;
+  }
+  
+  .favorite-item-buttons {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .favorite-item-buttons button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #2f235a;
+    transition: color 0.3s;
+  }
+  
+  .favorite-item-buttons button:hover {
+    color: #ff0000;
+  }
+  
