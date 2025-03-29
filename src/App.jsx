@@ -11,7 +11,8 @@ import Recepten from "./pages/Recepten/Recepten";
 import ReceptDetails from "./pages/Recepten/ReceptenDetails";
 import Register from "./pages/Register/Register";
 import Profile from "./pages/Profile/Profile";
-import Dagboek from "./pages/Dagboek/Dagboek"
+import Dagboek from "./pages/Dagboek/Dagboek";
+import PrivateRoute from "./components/PrivateRouting/PrivateRouting";
 
 function App() {
   return (
@@ -24,12 +25,33 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/about-us" element={<AboutUs />} />
               <Route path="/login" element={<Login />} />
-              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/register" element={<Register />} />
+              <Route
+                path="/dashboard"
+                element={
+                  <PrivateRoute>
+                    <Dashboard />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path="/profile"
+                element={
+                  <PrivateRoute>
+                    <Profile />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path="/dagboek"
+                element={
+                  <PrivateRoute>
+                    <Dagboek />
+                  </PrivateRoute>
+                }
+              />
               <Route path="/recepten" element={<Recepten />} />
               <Route path="/recepten/:id" element={<ReceptDetails />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/profile" element={<Profile />} />
-              <Route path="dagboek" element={<Dagboek />} />
             </Routes>
           </main>
           <Footer />
