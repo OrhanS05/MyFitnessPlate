@@ -1,23 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Dagboek.css";
 import getFormattedDate from "../../helpers/dateHelper";
 import MealTabs from "../../components/MealTabs/MealTabs";
 import AddRecipeModal from "../../components/AddRecipeModal/AddRecipeModal";
-import Button from "../../components/Button/Button"; 
+import Button from "../../components/Button/Button";
 
 function Dagboek() {
   const todayString = getFormattedDate();
   const mealOptions = ["Ontbijt", "Lunch", "Avondeten", "Tussendoor"];
   const [activeMeal, setActiveMeal] = useState("Ontbijt");
 
-  const [daybookItems, setDaybookItems] = useState({
+  const defaultDaybookItems = {
     Ontbijt: [],
     Lunch: [],
     Avondeten: [],
     Tussendoor: [],
+  };
+
+  const [daybookItems, setDaybookItems] = useState(() => {
+    const storedItems = localStorage.getItem("daybookItems");
+    return storedItems ? JSON.parse(storedItems) : defaultDaybookItems;
   });
 
   const [showModal, setShowModal] = useState(false);
+
+ 
+  useEffect(() => {
+    localStorage.setItem("daybookItems", JSON.stringify(daybookItems));
+  }, [daybookItems]);
 
   const handleTabSelect = (meal) => {
     setActiveMeal(meal);
