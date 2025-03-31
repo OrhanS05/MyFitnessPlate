@@ -1,0 +1,14 @@
+.circular-progress {
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .circular-progress-bg {
+    stroke: #fff;
+  }
+  
+  .circular-progress-bar {
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+  }
+  
