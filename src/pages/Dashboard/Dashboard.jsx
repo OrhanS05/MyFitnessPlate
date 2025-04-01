@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Dashboard.css";
 import MacroCard from "../../components/MacroCard/MacroCard";
 import StatsCard from "../../components/StatsCard/StatsCard";
@@ -6,33 +6,62 @@ import WeightCard from "../../components/WeightCard/WeightCard";
 import Button from "../../components/Button/Button";
 
 function Dashboard() {
+  const defaultMacros = [
+    { name: "Calorieën", consumed: 0, goal: 1800, color: "#0066EE" },
+    { name: "Koolhydraten", consumed: 0, goal: 222, color: "#2CB9B0" },
+    { name: "Proteïne", consumed: 0, goal: 89, color: "#FFBE00" },
+    { name: "Vetten", consumed: 0, goal: 59, color: "#6C0D8F" },
+  ];
 
-  const [macros, setMacros] = useState([
-    { name: "Proteïne", consumed: 263, goal: 300, color: "#FFBE00" },
-    { name: "Calorieën", consumed: 1500, goal: 2000, color: "#0066EE" },
-    { name: "Koolhydraten", consumed: 12, goal: 250, color: "#2CB9B0" },
-    { name: "Vetten", consumed: 12, goal: 70, color: "#6C0D8F" },
-  ]);
+  const [macros, setMacros] = useState(() => {
+    const stored = localStorage.getItem("dashboard_macros");
+    return stored ? JSON.parse(stored) : defaultMacros;
+  });
+
+  const defaultSteps = { consumed: 0, goal: 10000 };
+  const [steps, setSteps] = useState(() => {
+    const stored = localStorage.getItem("dashboard_steps");
+    return stored ? JSON.parse(stored) : defaultSteps;
+  });
+
+  const defaultWater = { consumed: 0, goal: 2 };
+  const [water, setWater] = useState(() => {
+    const stored = localStorage.getItem("dashboard_water");
+    return stored ? JSON.parse(stored) : defaultWater;
+  });
+
+  const defaultWeight = { current: 85, goal: 85 };
+  const [weight, setWeight] = useState(() => {
+    const stored = localStorage.getItem("dashboard_weight");
+    return stored ? JSON.parse(stored) : defaultWeight;
+  });
+
+  useEffect(() => {
+    localStorage.setItem("dashboard_macros", JSON.stringify(macros));
+  }, [macros]);
+
+  useEffect(() => {
+    localStorage.setItem("dashboard_steps", JSON.stringify(steps));
+  }, [steps]);
+
+  useEffect(() => {
+    localStorage.setItem("dashboard_water", JSON.stringify(water));
+  }, [water]);
+
+  useEffect(() => {
+    localStorage.setItem("dashboard_weight", JSON.stringify(weight));
+  }, [weight]);
+
   const [editingIndex, setEditingIndex] = useState(null);
   const [newGoal, setNewGoal] = useState("");
   const [newConsumed, setNewConsumed] = useState("");
-
-
-  const [steps, setSteps] = useState({ consumed: 0, goal: 5000 });
-  const [water, setWater] = useState({ consumed: 0, goal: 2 });
-
-
-  const [weight, setWeight] = useState({ current: 0, goal: 100 });
-
-
   const [editingType, setEditingType] = useState(null);
-
 
   function handleEditMacro(index) {
     setEditingType("macro");
     setEditingIndex(index);
-    setNewGoal(macros[index].goal);
-    setNewConsumed(macros[index].consumed);
+    setNewGoal(macros[index].goal.toString());
+    setNewConsumed(macros[index].consumed.toString());
   }
 
   function handleSaveMacro(e) {
@@ -40,71 +69,67 @@ function Dashboard() {
     const updated = [...macros];
     updated[editingIndex] = {
       ...updated[editingIndex],
-      goal: newGoal,
-      consumed: newConsumed,
+      goal: parseFloat(newGoal.replace(',', '.')),
+      consumed: parseFloat(newConsumed.replace(',', '.')),
     };
     setMacros(updated);
     setEditingIndex(null);
     setEditingType(null);
   }
 
-
   const [tempStepsConsumed, setTempStepsConsumed] = useState("");
   const [tempStepsGoal, setTempStepsGoal] = useState("");
 
   function handleEditSteps() {
     setEditingType("steps");
-    setTempStepsConsumed(steps.consumed);
-    setTempStepsGoal(steps.goal);
+    setTempStepsConsumed(steps.consumed.toString());
+    setTempStepsGoal(steps.goal.toString());
   }
 
   function handleSaveSteps(e) {
     e.preventDefault();
     setSteps({
-      consumed: parseInt(tempStepsConsumed),
-      goal: parseInt(tempStepsGoal),
+      consumed: parseInt(tempStepsConsumed.replace(',', '.'), 10),
+      goal: parseInt(tempStepsGoal.replace(',', '.'), 10),
     });
     setEditingType(null);
   }
-
 
   const [tempWaterConsumed, setTempWaterConsumed] = useState("");
   const [tempWaterGoal, setTempWaterGoal] = useState("");
 
   function handleEditWater() {
     setEditingType("water");
-    setTempWaterConsumed(water.consumed);
-    setTempWaterGoal(water.goal);
+    setTempWaterConsumed(water.consumed.toString());
+    setTempWaterGoal(water.goal.toString());
   }
 
   function handleSaveWater(e) {
     e.preventDefault();
     setWater({
-      consumed: parseFloat(tempWaterConsumed),
-      goal: parseFloat(tempWaterGoal),
+      consumed: parseFloat(tempWaterConsumed.replace(',', '.')),
+      goal: parseFloat(tempWaterGoal.replace(',', '.')),
     });
     setEditingType(null);
   }
-
 
   const [tempWeightCurrent, setTempWeightCurrent] = useState("");
   const [tempWeightGoal, setTempWeightGoal] = useState("");
 
   function handleEditWeight() {
     setEditingType("weight");
-    setTempWeightCurrent(weight.current);
-    setTempWeightGoal(weight.goal);
+    setTempWeightCurrent(weight.current.toString());
+    setTempWeightGoal(weight.goal.toString());
   }
 
   function handleSaveWeight(e) {
     e.preventDefault();
     setWeight({
-      current: parseFloat(tempWeightCurrent),
-      goal: parseFloat(tempWeightGoal),
+      current: parseFloat(tempWeightCurrent.replace(',', '.')),
+      goal: parseFloat(tempWeightGoal.replace(',', '.')),
     });
     setEditingType(null);
   }
-
 
   function handleCancel() {
     setEditingIndex(null);
@@ -151,7 +176,6 @@ function Dashboard() {
         />
       </div>
 
-
       {editingType === "macro" && editingIndex !== null && (
         <div className="modal-overlay">
           <div className="modal">
@@ -160,7 +184,7 @@ function Dashboard() {
               <div className="form-group">
                 <label>Doel (g):</label>
                 <input
-                  type="number"
+                  type="text"
                   value={newGoal}
                   onChange={(e) => setNewGoal(e.target.value)}
                   required
@@ -169,7 +193,7 @@ function Dashboard() {
               <div className="form-group">
                 <label>Inname (g):</label>
                 <input
-                  type="number"
+                  type="text"
                   value={newConsumed}
                   onChange={(e) => setNewConsumed(e.target.value)}
                   required
@@ -192,7 +216,7 @@ function Dashboard() {
               <div className="form-group">
                 <label>Inname (stappen):</label>
                 <input
-                  type="number"
+                  type="text"
                   value={tempStepsConsumed}
                   onChange={(e) => setTempStepsConsumed(e.target.value)}
                   required
@@ -201,7 +225,7 @@ function Dashboard() {
               <div className="form-group">
                 <label>Doel (stappen):</label>
                 <input
-                  type="number"
+                  type="text"
                   value={tempStepsGoal}
                   onChange={(e) => setTempStepsGoal(e.target.value)}
                   required
@@ -224,7 +248,7 @@ function Dashboard() {
               <div className="form-group">
                 <label>Inname (L):</label>
                 <input
-                  type="number"
+                  type="text"
                   value={tempWaterConsumed}
                   onChange={(e) => setTempWaterConsumed(e.target.value)}
                   required
@@ -233,7 +257,7 @@ function Dashboard() {
               <div className="form-group">
                 <label>Doel (L):</label>
                 <input
-                  type="number"
+                  type="text"
                   value={tempWaterGoal}
                   onChange={(e) => setTempWaterGoal(e.target.value)}
                   required
@@ -256,7 +280,7 @@ function Dashboard() {
               <div className="form-group">
                 <label>Huidig gewicht (kg):</label>
                 <input
-                  type="number"
+                  type="text"
                   value={tempWeightCurrent}
                   onChange={(e) => setTempWeightCurrent(e.target.value)}
                   required
@@ -265,7 +289,7 @@ function Dashboard() {
               <div className="form-group">
                 <label>Streefgewicht (kg):</label>
                 <input
-                  type="number"
+                  type="text"
                   value={tempWeightGoal}
                   onChange={(e) => setTempWeightGoal(e.target.value)}
                   required
