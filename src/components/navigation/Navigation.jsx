@@ -9,7 +9,7 @@ function Navigation() {
   return (
     <nav>
       <div className="nav-container">
-        <h4>MyFitnessPlate</h4>
+        <h4 className="logo">MyFitnessPlate</h4>
         <ul>
           <li>
             <NavLink to="/" className={({ isActive }) => (isActive ? "active-link" : "default-link")}>

@@ -47,7 +47,7 @@ function Home() {
             <p>
               Klaar om de controle te krijgen over je voeding te nemen? Registreer je gratis en begin direct met het bereiken van je doelen.
             </p>
-            <p>🚀 Jouw reis naar een gezondere levensstijl begint hier!</p>
+            <p>🚀 Jouw reis naar een gezondere levensstijl begint <Link to="/login">hier! </Link></p>
           </section>
         </section>
         <section className="aboutUs"> 

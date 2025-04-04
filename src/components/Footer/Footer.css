@@ -44,3 +44,28 @@
 .social-icons img:hover {
   transform: scale(1.1);
 }
+
+@media (max-width: 600px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px 10px;
+  }
+  
+  .footer-section {
+    margin-bottom: 1rem;
+  }
+  
+  .footer-section-center {
+    margin: 1rem 0;
+  }
+
+  .footer-section-right {
+    text-align: center;
+  }
+  
+  .social-icons {
+    justify-content: center;
+  }
+}
