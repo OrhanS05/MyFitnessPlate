@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Dagboek.css";
 import getFormattedDate from "../../helpers/dateHelper";
-import MealTabs from "../../components/MealTabs/MealTabs";
+import MealTypeTabs from "../../components/MealTypeTabs/MealTypeTabs";
 import AddRecipeModal from "../../components/AddRecipeModal/AddRecipeModal";
 import Button from "../../components/Button/Button";
 
@@ -73,33 +73,36 @@ function Dagboek() {
     <div className="dagboek-container">
       <div className="dagboek-header">
         <h2 className="dagboek-title">Mijn Dagboek voor {todayString}</h2>
-        <MealTabs
-          options={mealOptions}
-          activeTab={activeMeal}
-          onTabSelect={handleTabSelect}
+        <MealTypeTabs
+          mealOptions={mealOptions}
+          activeMeal={activeMeal}
+          onMealSelect={setActiveMeal}
         />
       </div>
 
       <Button text="Voeg toe" className="blue" onClick={() => setShowModal(true)} />
 
       <div className="dagboek-items-list">
-        {daybookList.map((item, index) => {
-          const isFav = favoriteItems.includes(item);
-          return (
-            <div key={index} className="dagboek-item">
-              <span>
-                {item.name} - {item.kcal} Kcal | {item.carbs}g carbs |{" "}
-                {item.protein}g eiwitten | {item.fat}g vet
-              </span>
-              <div className="dagboek-item-buttons">
-                <button onClick={() => handleToggleFavorite(item)}>
-                  {isFav ? "♥" : "♡"}
-                </button>
-                <button onClick={() => handleRemoveItem(index)}>x</button>
+        {daybookList.length === 0 ? (
+          <p>Geen items gevonden.</p>
+        ) : (
+          daybookList.map((item, index) => {
+            const isFav = favoriteItems.includes(item);
+            return (
+              <div key={index} className="dagboek-item">
+                <span>
+                  {item.name} - {item.kcal} Kcal | {item.carbs}g carbs | {item.protein}g eiwitten | {item.fat}g vet
+                </span>
+                <div className="dagboek-item-buttons">
+                  <button onClick={() => handleToggleFavorite(item)}>
+                    {isFav ? "♥" : "♡"}
+                  </button>
+                  <button onClick={() => handleRemoveItem(index)}>x</button>
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })
+        )}
       </div>
 
       {showModal && (
@@ -117,8 +120,7 @@ function Dagboek() {
             {favoriteItems.map((favItem, i) => (
               <div key={i} className="favorite-item">
                 <span>
-                  {favItem.name} - {favItem.kcal} Kcal | {favItem.carbs}g carbs |{" "}
-                  {favItem.protein}g eiwitten | {favItem.fat}g vet
+                  {favItem.name} - {favItem.kcal} Kcal | {favItem.carbs}g carbs | {favItem.protein}g eiwitten | {favItem.fat}g vet
                 </span>
                 <div className="favorite-item-buttons">
                   <button onClick={() => handleToggleFavorite(favItem)}>x</button>

@@ -1,0 +1,25 @@
+.mealtype-buttons {
+    margin-bottom: 1rem;
+  }
+  
+  .mealtype-button {
+    background-color: #ffffff;
+    color: #2f235a;
+    margin-right: 10px;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  
+  .mealtype-button:hover {
+    background-color: #ddd;
+  }
+  
+  .mealtype-button.active {
+    background-color: #4285F4;
+    color: #ffffff;
+  }
+  
