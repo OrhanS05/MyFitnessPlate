@@ -21,7 +21,6 @@ const ReceptDetails = () => {
             },
           }
         );
-        console.log("API Response:", result.data);
         setRecipe(result.data);
       } catch (err) {
         console.error("Error fetching recipe details:", err);

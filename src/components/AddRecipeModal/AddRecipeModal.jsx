@@ -83,6 +83,9 @@ function AddRecipeModal({ onClose, onAdd, mealType }) {
         {error && <p style={{ color: "red" }}>{error}</p>}
 
         <div className="results">
+          {!loading && !error && results.length === 0 && (
+            <p>Geen resultaten gevonden.</p>
+          )}
           {results.map((recipe) => (
             <div key={recipe.id} className="result-item">
               <img
