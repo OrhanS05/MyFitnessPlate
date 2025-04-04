@@ -1,19 +1,21 @@
 import "./Home.css";
 import React from "react";
 import { Link } from "react-router-dom";
+import Carousel from "../../components/Carousel/Carousel";
 import Reviews from "../../components/Reviews/Reviews";
 
 function Home() {
   return (
     <>
       <main className="page-container">
+        <Carousel />
+
         <section className="intro">
           <h2>Welkom bij MyFitnessPlate - Jouw Persoonlijke gids naar Gezond eten.</h2>
         </section>
         <section className="content-container-col1">
           <p>
-            Gezond eten en je voedingsdoelen behalen zou eenvoudig en toegankelijk moeten zijn. Toch merken veel mensen dat het bijhouden van calorieën en voedingsstoffen al snel tijdrovend en verwarrend wordt. Bestaande apps zijn vaak complex, vol reclame of missen echt persoonlijke aanbevelingen. Dit maakt het lastig om een gezond voedingspatroon vol te houden.
-            Daarom hebben we MyFitnessPlate ontwikkeld - een gebruiksvriendelijke en doelgerichte applicatie die je helpt je voedingsdoelen te bereiken, zonder gedoe. 
+            Gezond eten en je voedingsdoelen behalen zou eenvoudig en toegankelijk moeten zijn. Toch merken veel mensen dat het bijhouden van calorieën en voedingsstoffen al snel tijdrovend en verwarrend wordt. Bestaande apps zijn vaak complex, vol reclame of missen echt persoonlijke aanbevelingen. Daarom hebben we MyFitnessPlate ontwikkeld - een gebruiksvriendelijke en doelgerichte applicatie die je helpt je voedingsdoelen te bereiken, zonder gedoe.
           </p>
         </section>
         <p className="unique-tekst">
@@ -38,7 +40,7 @@ function Home() {
           </p>
           <p>
             <strong>📊 Houd je voortgang bij</strong> <br/>
-            Naast je voedingsinname kun je met MyFitnessPlate ook eenvoudig je stappen en gewicht bijhouden. Voer je huidige gewicht en je streefgewicht in daarnaast kan je ook nog het aantal gezette stappen invullen en bijhouden. Zo krijg je een compleet beeld van je gezondheid en blijf je gemotiveerd om je doelen te behalen!
+            Naast je voedingsinname kun je met MyFitnessPlate ook eenvoudig je stappen en gewicht bijhouden. Zo krijg je een compleet beeld van je gezondheid en blijf je gemotiveerd om je doelen te behalen!
           </p>
           <section className="start-today"> 
             <h3>Start vandaag nog!</h3>
@@ -52,7 +54,6 @@ function Home() {
           <p>Meer info? Kijk in <Link to="about-us">About Us!</Link></p>
         </section>
         <Reviews />
-        
       </main>
     </>
   );

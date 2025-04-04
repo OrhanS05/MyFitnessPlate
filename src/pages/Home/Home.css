@@ -38,7 +38,6 @@
   left: 0px;
   color: #FFFFFF;
   font-family: 'Inter', sans-serif;
-  border: 1px solid peru;
   text-align: left; 
   animation: fadeInUp 1.4s ease-out;
 }
@@ -47,7 +46,6 @@
   font-family: 'Inter', sans-serif;
   font-style: italic;
   font-weight: 100;
-  border: 1px solid peru;
   text-align: left; 
   color: #FFFFFF;
   animation: fadeInUp 1.6s ease-out;
@@ -56,7 +54,6 @@
 .content-container-col2 {
   color: #FFFFFF;
   font-family: 'Inter', sans-serif;
-  border: 2px solid pink;
   text-align: left; 
   animation: fadeInUp 1.8s ease-out;
 }
@@ -65,15 +62,43 @@
   margin-top: 30px;
   text-align: left; 
   font-weight: bold;
-  border: 2px solid peachpuff;
   animation: fadeInUp 2s ease-out;
 }
 
 .aboutUs {
   color: #FFFFFF;
   font-family: 'Inter', sans-serif;
-  border: 2px solid purple;
   text-align: left;
   margin-left: auto; 
   animation: fadeInUp 2.2s ease-out;
+}
+
+@media (max-width: 375px) {
+  .page-container {
+    margin: 1rem auto;
+    padding: 0 1rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .intro {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  .content-container-col1,
+  .content-container-col2 {
+    border-width: 1px;
+    padding: 0.5rem;
+  }
+
+  .unique-tekst,
+  .start-today,
+  .aboutUs {
+    font-size: 16px;
+  }
+
+  .aboutUs {
+    margin-left: 0;
+  }
 }
