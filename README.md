@@ -25,16 +25,16 @@ Of je nu fitter wilt worden, afvallen of gewoon inzicht wilt krijgen in je eetpa
 - ## **IDE (naar eigen keuze)** 
 - Er is een IDE vereist om de applicatie te draaien.
 - Persoonlijk vind ik Visual Studio Code optimaal, maar dat verschilt per persoon. Daarnaast is deze IDE ook gratis.
-- Klik [hier] (https://code.visualstudio.com/) om Visual Studio Code te installeren. 
+- Klik [hier](https://code.visualstudio.com/) om Visual Studio Code te installeren. 
 
 **Node.js**
 - Node.js is vereist om de commando's in de terminal te kunnen uitvoeren.
-- klik [hier] (https://nodejs.org/en/download/current) om de laatste versie te installeren van node.js.
+- klik [hier](https://nodejs.org/en/download/current) om de laatste versie te installeren van node.js.
 
 **Api Key**
 - Indien je een docent van **Novi** bent, dan hoef je zelf geen API key aan te maken. De benodigde gegevens zijn al toegevoegd in het .env- bestand van dit project.
 - Wil je als developer zelf een eigen API key genereren om de app lokaal te testen? Volg dan onderstaande stappen:
-1. Ga naar [Spooncular-Api] (https://spoonacular.com/food-api).
+1. Ga naar [Spooncular-Api](https://spoonacular.com/food-api).
 2. Maak gratis een account aan.
 3. Vraag een API Key aan via je account-dashboard.
 4. Voeg deze toe in een `.env` bestand in de hoofdmap van het project, zoals hieronder:
