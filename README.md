@@ -15,6 +15,7 @@ Of je nu fitter wilt worden, afvallen of gewoon inzicht wilt krijgen in je eetpa
 - Installatie Stappenplan
 - Registreren en Inloggen
 - De app gebruiken
+- Overige commando's
 
 ## Benodigdheden
 
@@ -76,3 +77,17 @@ VITE_API_KEY= jouw_api_key
  - Nu alle dependencies zijn geïnstalleerd, ben je klaar om de applicatie te starten. 
  - Type het commando: **npm run dev** in je terminal en druk op Enter:
  - Als het goed is geegaan wordt de app gestart op http://localhost:5173/. Je kan erop klikken door Ctrl + klik (met je muis), te doen of ga naar de browser en zoek http://localhost:5173/ op om MyFitnessPlate te openen. 
+
+## Registreren en Inloggen 
+**Registratievereisten** 
+- **Gebruikersnaam**: Minimaal 6 karakters
+- **Wachtwoord**: Minimaal 6 karakters
+- **Mailadres**: Geldig email adres
+
+## Overige commando's
+
+| Commando         | Beschrijving                                                            |
+|------------------|-------------------------------------------------------------------------|
+| `npm run build`  | Bouwt de applicatie voor productie in de `dist` map                     |
+| `npm run lint`   | Voert ESLint uit om de code te controleren op fouten                   |
+| `npm run preview`| Start een lokale server om de gebouwde productieversie te bekijken     |
