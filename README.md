@@ -1,6 +1,13 @@
 # Installatiehandleiding MyFitnessPlate
 
-![Screenshot van de dashboardpagina](./src/assets/read.me/dashboard.png)
+## Inhoudsopgave
+
+- Inleiding 
+- Screenshot
+- Benodigdheden
+- De applicatie draaien
+- Overige commando's
+- Testgebruikers
 
 ## Inleiding 
 
@@ -9,13 +16,9 @@ Je kunt handmatig voedingsmiddelen toevoegen of recepten zoeken via de geïntegr
 Daarnaast biedt de app een overzichtelijk dagboek om je eetgeschiedenis terug te zien, en een dashboard dat in één oogopslag je voortgang laat zien.
 Of je nu fitter wilt worden, afvallen of gewoon inzicht wilt krijgen in je eetpatroon: **MyFitnessPlate** helpt je op weg. Veel succes en plezier met het gebruik van de app!
 
-## Inhoudsopgave
+![Screenshot van de dashboardpagina](./src/assets/read.me/dashboard.png)
 
-- Benodigdheden
-- Installatie Stappenplan
-- Registreren en Inloggen
-- De app gebruiken
-- Overige commando's
+
 
 ## Benodigdheden
 
@@ -44,7 +47,7 @@ Of je nu fitter wilt worden, afvallen of gewoon inzicht wilt krijgen in je eetpa
 VITE_API_KEY= jouw_api_key
 ```
 
-## Installatiestappenplan 
+## De applicatie draaien
 1. Installeer Google Chrome
 2. installeer Visual Studio Code of jouw IDE naar keuze;
     - ik raad je Visual Studio Code aan omdat het gratis en en veel wordt gebruikt.
@@ -79,11 +82,6 @@ VITE_API_KEY= jouw_api_key
  - Type het commando: `**npm run dev**` in je terminal en druk op Enter:
  - Als het goed is geegaan wordt de app gestart op http://localhost:5173/. Je kan erop klikken door Ctrl + klik (met je muis), te doen of ga naar de browser en zoek http://localhost:5173/ op om MyFitnessPlate te openen. 
 
-## Registreren en Inloggen 
-**Registratievereisten** 
-- **Gebruikersnaam**: Minimaal 6 karakters
-- **Wachtwoord**: Minimaal 6 karakters
-- **Mailadres**: Geldig email adres
 
 ## Overige commando's
 
@@ -93,3 +91,9 @@ VITE_API_KEY= jouw_api_key
 | `npm run build`   | Bouwt de applicatie voor productie in de `dist` map                     |
 | `npm run lint`    | Voert ESLint uit om de code te controleren op fouten                    |
 | `npm run preview` | Start een lokale server om de gebouwde productieversie te bekijken      |
+
+## Testgebruikers
+**Registratievereisten** 
+- **Gebruikersnaam**: Minimaal 6 karakters
+- **Wachtwoord**: Minimaal 6 karakters
+- **Mailadres**: Geldig email adres
