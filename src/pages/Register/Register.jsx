@@ -34,7 +34,6 @@ function Register() {
       role: ["user"],
     };
 
-    console.log("Registreren met de volgende gegevens:", userData);
 
     try {
       const response = await fetch("https://frontend-educational-backend.herokuapp.com/api/auth/signup", {
@@ -43,14 +42,12 @@ function Register() {
         body: JSON.stringify(userData),
       });
 
-      console.log("API response:", response);
 
       if (!response.ok) {
         const errorData = await response.json();
         throw new Error(errorData.message || "Aanmelden niet gelukt, probeer opnieuw.");
       }
 
-      console.log("Registratie succesvol!");
       navigate("/login");
     } catch (err) {
       console.error("Registratie error:", err);

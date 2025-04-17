@@ -5,7 +5,7 @@ import "./Login.css";
 
 function Login() {
   const navigate = useNavigate();
-  const { login } = useContext(AuthContext); 
+  const { login } = useContext(AuthContext);
 
   const [usernameInput, setUsernameInput] = useState("");
   const [password, setPassword] = useState("");
@@ -33,25 +33,24 @@ function Login() {
       );
 
       if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || "Inloggen mislukt, controleer je gegevens.");
+        let message = "Ongeldige gebruikersnaam of wachtwoord. Probeer het opnieuw.";
+        try {
+          const errorData = await response.json();
+          if (errorData && errorData.message) {
+            message = errorData.message;
+          }
+        } catch {
+        }
+        throw new Error(message);
       }
 
       const data = await response.json();
-      console.log("Login response:", data);
-      
- 
       const token = data.accessToken;
       const name = data.username;
 
-
       login(token, name);
-
-   
       navigate("/dashboard");
-
     } catch (err) {
-      console.error("Login error:", err);
       setError(err.message);
     } finally {
       setLoading(false);
