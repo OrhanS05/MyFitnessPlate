@@ -20,7 +20,7 @@ Of je nu fitter wilt worden, afvallen of gewoon inzicht wilt krijgen in je eetpa
 
 - **Google Chrome**
 -  Ik raad je zeker aan om Chrome te installeren. Deze applicatie is namelijk ontwikkeld en getest in Google Chrome.
-- klik [hier] (https://www.google.com/intl/nl/chrome/) om zo de laatste versie van Google Chrome te installeren.
+- klik [hier](https://www.google.com/intl/nl/chrome/) om zo de laatste versie van Google Chrome te installeren.
 
 - ## **IDE (naar eigen keuze)** 
 - Er is een IDE vereist om de applicatie te draaien.
@@ -41,3 +41,38 @@ Of je nu fitter wilt worden, afvallen of gewoon inzicht wilt krijgen in je eetpa
 
 ```env
 VITE_API_KEY= jouw_api_key
+```
+
+## Installatiestappenplan 
+1. Installeer Google Chrome
+2. installeer Visual Studio Code of jouw IDE naar keuze;
+    - ik raad je Visual Studio Code aan omdat het gratis en en veel wordt gebruikt.
+    - Optioneel: installeer handige extensies zoals ESLint, Prettier,  JavaScript (ES6) code snippets. Deze extensies zijn niet verplicht , maar zouden wel zorgen voor een betere ontwikkelervaring.
+
+3. Installeer Node.js
+    - zodra je Node.js hebt geïnstalleerd is het nu tijd om te controleren of Node.js correct geïnstalleerd is. 
+    - Start je IDE eens opnieuw op.
+    - Open de terminal en type het volgende commando: node-v.
+    - Je zal nu het versienummer moeten krijgen waar je op zit, bijvoorbeeld v18.18.0.
+    - Daarnaast doe je npm -v om te kijken of NPM correct is mee geinstalleerd.
+    - Krijg je een foutmelding hierbij? Installeer Node.js dan opnieuw.
+
+4. Applicatie binnenhalen op je eigen machine
+    - Nadat je Git hebt geinstalleerd ga je naar [Deze]() directory.
+    - Klik op de groene button met <>code en kopieër de **HTTPS-link**
+    - Open je IDE druk op Ctrl + Shift + P (of Cmd + Shift + P op Mac) om de Command Palette te openen. (of gebruik git clone <link> in je terminal).
+    - Type en klik op Git: Clone.
+    - Plak hier de gekopieërde GitHub-link.
+    - Kies een map op je computer waarin je het project wilt opslaan.
+    - Zodra het downloaden voltooid is, zal je IDE vragen of je de map wilt openen. Klik op "**Open**".  
+
+5. Dependencies installeren:
+    - Nu je Node.js en NPM hebt geïnstalleerd, gaan we de benodigde dependencies binnenhalen die je nodig hebt om de applicatie te draaien.
+    - Type het commando: npm install in je terminal en druk op Enter:
+    - Dit kan even duren, natuurlijk afhankelijk van je internetverbinding en computerprestaties.
+    - hierna is je project voorzien van de benodigde packages en kun je doorgaan met de volgende stap. 
+
+6. Applicatie starten
+ - Nu alle dependencies zijn geïnstalleerd, ben je klaar om de applicatie te starten. 
+ - Type het commando: **npm run dev** in je terminal en druk op Enter:
+ - Als het goed is geegaan wordt de app gestart op http://localhost:5173/. Je kan erop klikken door Ctrl + klik (met je muis), te doen of ga naar de browser en zoek http://localhost:5173/ op om MyFitnessPlate te openen. 
