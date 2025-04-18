@@ -1,0 +1,5 @@
+.scroller-container {
+    overflow-y: auto;
+    max-height: 60vh;
+  }
+  
