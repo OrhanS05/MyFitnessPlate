@@ -79,7 +79,7 @@ VITE_API_KEY= jouw_api_key
 
 6. Applicatie starten
  - Nu alle dependencies zijn geïnstalleerd, ben je klaar om de applicatie te starten. 
- - Type het commando: `**npm run dev**` in je terminal en druk op Enter:
+ - Type het commando: `npm run dev` in je terminal en druk op Enter:
  - Als het goed is geegaan wordt de app gestart op http://localhost:5173/. Je kan erop klikken door Ctrl + klik (met je muis), te doen of ga naar de browser en zoek http://localhost:5173/ op om MyFitnessPlate te openen. 
 
 
