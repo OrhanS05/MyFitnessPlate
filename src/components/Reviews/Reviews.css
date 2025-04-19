@@ -1,0 +1,51 @@
+.reviews-container {
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    background-color: transparent; 
+  }
+  
+  .reviews-heading {
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 2rem;
+    color: #fff;
+    font-size: 1.5rem;
+  }
+  
+  .reviews-list {
+    display: flex;
+    flex-wrap: wrap;         
+    justify-content: center; 
+    gap: 2rem;              
+    max-width: 1000px;       
+    margin: 0 auto;
+  }
+  
+  .review-card {
+    background-color: #fff; 
+    width: 300px;          
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .review-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #222;
+  }
+  
+  .review-rating .star {
+    color: gold;
+    margin-right: 2px;
+  }
+  
+  .review-message {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 0.5rem;
+    line-height: 1.4;
+  }
+  

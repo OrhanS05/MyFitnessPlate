@@ -15,7 +15,7 @@ function Footer() {
           <p>orhan.sevilir@novi-education.nl</p>
         </div>
         <div className="footer-section footer-section-center">
-          <p>© 2025,MyFitnessPlate</p>
+          <p>© 2025, MyFitnessPlate</p>
         </div>
 
         

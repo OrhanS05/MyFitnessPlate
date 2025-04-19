@@ -13,7 +13,7 @@ import Dagboek from "./pages/Dagboek/Dagboek";
 import Recepten from "./pages/Recepten/Recepten";
 import ReceptDetails from "./pages/Recepten/ReceptenDetails";
 import { AuthContext } from "./context/AuthContext";
-
+import Error404 from "./pages/Error404/Error404"
 
 function App() {
   const { isAuth } = useContext(AuthContext);
@@ -47,7 +47,7 @@ function App() {
             path="/recepten/:id"
             element={isAuth ? <ReceptDetails /> : <Navigate to="/login" />}
           />
-          <Route path="*" element={<Navigate to="/" />} />
+          <Route path="*" element={<Error404 />} />
         </Routes>
       </main>
       <Footer />
